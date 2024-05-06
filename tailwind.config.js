@@ -14,7 +14,15 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                'times-new-roman': ['"Times New Roman"', 'Sans-serif'],
+                'playfair-display': ['"Playfair Display"'],
+                'barlow-semi-condensed': ['"Barlow Semi Condensed"'],
             },
+            colors: {
+                'light-purple': '#54278f',
+                'dark-purple': '#3B0187',
+                'text-purple': '#8E43F0',
+            }
         },
     },
 
