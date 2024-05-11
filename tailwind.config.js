@@ -22,6 +22,7 @@ export default {
                 'light-purple': '#54278f',
                 'dark-purple': '#3B0187',
                 'text-purple': '#8E43F0',
+                'charcoal-gray': '#161925',
             }
         },
     },
