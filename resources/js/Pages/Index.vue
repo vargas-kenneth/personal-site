@@ -1,6 +1,7 @@
 <script setup>
 import { Head } from '@inertiajs/vue3';
 import IntroSection from '@/Components/Home/IntroSection.vue';
+import SkillSection from '@/Components/Home/SkillSection.vue';
 
 const intro = 'Hello, My name is'
 const name = 'Kenneth Vargas';
@@ -19,6 +20,7 @@ const job = 'Web Developer';
     <span class="job capitalize text-3xl font-times-new-roman font-semibold">{{ job }}</span>
 </div>
 <IntroSection></IntroSection>
+<SkillSection></SkillSection>
 </template>
 
 <style>
