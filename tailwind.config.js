@@ -23,6 +23,7 @@ export default {
                 'dark-purple': '#3B0187',
                 'text-purple': '#8E43F0',
                 'charcoal-gray': '#161925',
+                'darker-purple': '#150E1F',
             }
         },
     },
