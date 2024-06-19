@@ -2,6 +2,7 @@
 import { Head } from '@inertiajs/vue3';
 import IntroSection from '@/Components/Home/IntroSection.vue';
 import SkillSection from '@/Components/Home/SkillSection.vue';
+import ExperienceSection from '@/Components/Home/ExperienceSection.vue';
 
 const intro = 'Hello, My name is'
 const name = 'Kenneth Vargas';
@@ -21,6 +22,7 @@ const job = 'Web Developer';
 </div>
 <IntroSection></IntroSection>
 <SkillSection></SkillSection>
+<ExperienceSection></ExperienceSection>
 </template>
 
 <style>
