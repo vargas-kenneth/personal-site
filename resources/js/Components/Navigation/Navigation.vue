@@ -1,9 +1,9 @@
 <script setup>
 const menuItems = [
-    { id: 1, title: 'Home', url: 'home' },
-    { id: 2, title: 'Intro', url: 'intro' },
-    { id: 3, title: 'Skills', url: 'skills' },
-    { id: 4, title: 'Experience', url: 'experience' },
+    { id: 1, title: 'Home', url: '#home' },
+    { id: 2, title: 'Intro', url: '#intro' },
+    { id: 3, title: 'Skills', url: '#skills' },
+    { id: 4, title: 'Experience', url: '#experience' },
 ];
 </script>
 
