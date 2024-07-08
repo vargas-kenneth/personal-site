@@ -13,7 +13,7 @@ const job = 'Web Developer';
 
 <template>
 <Head title="Home" />
-<div class="hero h-dvh flex flex-col justify-center content-center text-center">
+<div id="home" class="hero h-dvh flex flex-col justify-center content-center text-center">
     <span class="text-white uppercase text-xl font-barlow-semi-condensed mb-2">{{ intro }}</span>
     <div class="flex justify-center mb-5">
         <hr class="w-20 bg-white">
