@@ -39,7 +39,6 @@ const scrollToSection = (sectionId) => {
 
 const showMenus = (e) => {
     showMenu.value = !showMenu.value;
-    console.log(showMenu.value);
 };
 
 const updateScreenWidth = () => {
