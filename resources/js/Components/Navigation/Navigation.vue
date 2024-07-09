@@ -122,7 +122,7 @@ onBeforeUnmount(() => {
 
 .mobileMenu-enter-from,
 .mobileMenu-leave-to {
-    transform: translateX(200px);
+    transform: translateX(300px);
     opacity: 0;
 }
 
