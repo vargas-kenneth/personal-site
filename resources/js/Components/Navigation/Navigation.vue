@@ -14,6 +14,7 @@ const menuItems = [
 ];
 const screenWidth = ref(window.innerWidth);
 const showMenu = ref(false);
+const timeoutId = ref(null);
 
 const isMobile = computed(() => {
     return screenWidth.value <= 720;
@@ -31,9 +32,20 @@ const scrollToSection = (sectionId) => {
    
     if (sectionId !== '#home') {
         const section = document.querySelector(sectionId);
-        section.scrollIntoView({
-            behavior: 'smooth'
-        });
+
+        if (section) {
+            if (timeoutId.value) {
+                clearTimeout(timeoutId.value);
+            }
+
+            timeoutId.value = setTimeout(() => {
+                section.scrollIntoView({
+                    behavior: 'smooth'
+                });    
+            }, 450);
+        } else {
+            alert(`The Section ${section} not found!`);
+        }
     }
 };
 
@@ -51,6 +63,7 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
     window.removeEventListener('resize', updateScreenWidth);
+    clearTimeout(timeoutId.value);
 });
 </script>
 
