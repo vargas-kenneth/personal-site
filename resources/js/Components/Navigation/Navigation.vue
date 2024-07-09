@@ -79,7 +79,7 @@ onBeforeUnmount(() => {
             </ul>
         </div>
     </div>
-    <Transition name="mobileMenu" :duration="550">
+    <Transition name="mobileMenu" :duration="450">
         <div v-if="isMobile && showMenu"
             class="flex flex-col items-center py-6 bg-charcoal-gray h-screen">
             <ul class="menuItems text-xl text-center flex flex-col gap-y-3 w-full mb-4">
@@ -111,9 +111,10 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
-.mobileMenu-enter-from,
-.mobileMenu-leave-to {
-    transition: all 0.3s ease-in-out;
+.mobileMenu-enter-active,
+.mobileMenu-leave-active {
+    transition: all 0.25s ease-out;
+
 }
 
 .mobileMenu-enter-from,
@@ -128,7 +129,7 @@ onBeforeUnmount(() => {
 
 .mobileMenu-enter-active .menuItems,
 .mobileMenu-leave-active .menuItems {
-    transition: all 0.3s ease-in-out;
+    transition: all 0.25s ease-out;
 }
 
 .mobileMenu-enter-from .menuItems,
