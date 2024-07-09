@@ -20,6 +20,10 @@ const isMobile = computed(() => {
 });
 
 const scrollToSection = (sectionId) => {
+    if (showMenu) {
+        showMenu.value = false;
+    }
+
     const newUrl = sectionId === '#home'
         ? `${window.location.origin}/`
         : `${window.location.origin}/${sectionId}`;
