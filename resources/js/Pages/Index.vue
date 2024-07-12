@@ -27,10 +27,34 @@ const job = 'Web Developer';
 <Footer></Footer>
 </template>
 
-<style>
+<style scoped>
 .hero {
     background: theme('colors.dark-purple');
     background: linear-gradient(110deg, theme('colors.dark-purple') 0%, theme('colors.light-purple') 100%);
+}
+
+#home h1 {
+    line-height: normal;
+    overflow: hidden;
+    border-right: .15em solid orange; 
+    white-space: nowrap; 
+    margin: 0 auto; 
+    letter-spacing: .15em; 
+    animation: 
+        typing 3.5s steps(30, end),
+        blink-caret .5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 17ch; }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange }
 }
 
 .job {
