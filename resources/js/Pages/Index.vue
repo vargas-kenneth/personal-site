@@ -18,7 +18,7 @@ const job = 'Web Developer';
     <div class="flex justify-center mb-5">
         <hr class="w-20 bg-white">
     </div>
-    <h1 class="text-white text-6xl font-playfair-display mb-3">{{ name }}</h1>
+    <h1 class="text-white text-4xl sm:text-6xl font-playfair-display mb-3">{{ name }}</h1>
     <span class="job capitalize text-3xl font-times-new-roman font-semibold">{{ job }}</span>
 </div>
 <IntroSection></IntroSection>
