@@ -36,7 +36,7 @@ const job = 'Web Developer';
 #home h1 {
     line-height: normal;
     overflow: hidden;
-    border-right: .15em solid orange; 
+    border-right: .15em solid white; 
     white-space: nowrap; 
     margin: 0 auto; 
     letter-spacing: .15em; 
@@ -54,7 +54,7 @@ const job = 'Web Developer';
 /* The typewriter cursor effect */
 @keyframes blink-caret {
     from, to { border-color: transparent }
-    50% { border-color: orange }
+    50% { border-color: white }
 }
 
 .job {
