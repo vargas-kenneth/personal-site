@@ -1,5 +1,6 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
 import forms from '@tailwindcss/forms';
+const plugin = require('tailwindcss/plugin');
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -28,5 +29,15 @@ export default {
         },
     },
 
-    plugins: [forms],
+    plugins: [
+        forms,
+        plugin(function({ addBase, theme }) {
+            addBase({
+                ':root': {
+                    '--color-dark-purple': theme('colors.dark-purple'),
+                    },
+            })
+        }),
+    ],
+
 };
