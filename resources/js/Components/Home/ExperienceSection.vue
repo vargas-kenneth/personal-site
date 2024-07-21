@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, computed } from "vue";
+import { ref, computed } from "vue";
 import { Accordion, AccordionItem } from '@/Components/Accordion';
 
 const experiences = ref([
@@ -37,10 +37,6 @@ const screenWidth = ref(window.innerWidth);
 
 const isMobile = computed(() => {
     return screenWidth.value <= 1080;
-});
-
-onMounted(() => {
-    console.log(alternateDesign);
 });
 </script>
 
