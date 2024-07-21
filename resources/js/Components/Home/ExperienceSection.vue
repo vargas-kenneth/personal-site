@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted, computed } from "vue";
+import { Accordion, AccordionItem } from '@/Components/Accordion';
 
 const experiences = ref([
     {
@@ -72,6 +73,22 @@ onMounted(() => {
                     </div>
                 </div>
             </template>
+            <Accordion>
+                <template v-for="(experience, index) in experiences" :key="index">                    
+                    <AccordionItem :active-class="{ active: index === 0}">
+                        <template #header>
+                            {{ experience.jobTitle }}
+                        </template>
+                        <template #content>
+                            <span class="block">{{ experience.companyName }}</span>
+                            <span class="block mb-2">{{ experience.year }}</span>
+                            <p>
+                                {{ experience.description }}
+                            </p>
+                        </template>
+                    </AccordionItem>
+                </template>
+            </Accordion>
         </div>
     </div>
 </template>
