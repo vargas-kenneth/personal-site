@@ -15,6 +15,7 @@ const menuItems = [
 const screenWidth = ref(window.innerWidth);
 const showMenu = ref(false);
 const timeoutId = ref(null);
+const body = ref(null);
 
 const isMobile = computed(() => {
     return screenWidth.value <= 720;
@@ -23,6 +24,7 @@ const isMobile = computed(() => {
 const scrollToSection = (sectionId) => {
     if (showMenu) {
         showMenu.value = false;
+        body.value.style.cssText = '';
     }
 
     const newUrl = sectionId === '#home'
@@ -51,6 +53,7 @@ const scrollToSection = (sectionId) => {
 
 const showMenus = (e) => {
     showMenu.value = !showMenu.value;
+    body.value.style.cssText = 'height: 100%; overflow: hidden;';
 };
 
 const updateScreenWidth = () => {
@@ -59,6 +62,7 @@ const updateScreenWidth = () => {
 
 onMounted(() => {
     window.addEventListener('resize', updateScreenWidth);
+    body.value = document.querySelector('body');
 });
 
 onBeforeUnmount(() => {
