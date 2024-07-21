@@ -97,7 +97,7 @@ onBeforeUnmount(() => {
     </div>
     <Transition name="mobileMenu" :duration="450">
         <div v-if="isMobile && showMenu"
-            class="w-3/4 font-roboto ml-auto flex flex-col items-center py-6 bg-charcoal-gray h-screen">
+            class="font-roboto ml-auto flex flex-col items-center py-6 bg-charcoal-gray h-screen">
             <ul class="menuItems text-xl text-center flex flex-col gap-y-3 w-full mb-4">
                 <li v-for="item in menuItems" :key="item.id" class="w-full">
                     <a :href="`${ item.url }`" @click.prevent="scrollToSection(item.url)">{{ item.title }}</a>
