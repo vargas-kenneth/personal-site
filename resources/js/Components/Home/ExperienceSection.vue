@@ -33,6 +33,12 @@ const alternateDesign = computed(() => {
     })
 });
 
+const screenWidth = ref(window.innerWidth);
+
+const isMobile = computed(() => {
+    return screenWidth.value <= 1080;
+});
+
 onMounted(() => {
     console.log(alternateDesign);
 });
@@ -44,51 +50,55 @@ onMounted(() => {
             <div class="title mb-10 text-center">
                 <h1 class="text-white text-3xl font-bold">Experiences</h1>
             </div>
-            <template 
-                v-for="(experience, index) in alternateDesign"
-                :key="index">
+            <template v-if="!isMobile">
+                <template 
+                    v-for="(experience, index) in alternateDesign"
+                    :key="index">
 
-                <div 
-                    class="experiences flex justify-center text-white "
-                    :class="experience.reverseDesign ? '' : 'flex-row-reverse'">
-                    <div 
-                        class="flex-1 text-right pt-4"
-                        :class="experience.reverseDesign ? 'pr-4' : 'pl-4'">
-                        <span 
-                            class="block italic font-semibold mb-1"
-                            :class="experience.reverseDesign ? '' : 'text-left'">
-                            {{ experience.year }}
-                        </span>
-                        <span 
-                            class="block "
-                            :class="experience.reverseDesign ? '' : 'text-left'">
-                            {{ experience.companyName }}
-                        </span>
+                    <div
+                        class="experiences flex justify-center text-white "
+                        :class="experience.reverseDesign ? '' : 'flex-row-reverse'">
+                        <div 
+                            class="flex-1 text-right pt-4"
+                            :class="experience.reverseDesign ? 'pr-4' : 'pl-4'">
+                            <span 
+                                class="block italic font-semibold mb-1"
+                                :class="experience.reverseDesign ? '' : 'text-left'">
+                                {{ experience.year }}
+                            </span>
+                            <span 
+                                class="block "
+                                :class="experience.reverseDesign ? '' : 'text-left'">
+                                {{ experience.companyName }}
+                            </span>
+                        </div>
+                        <div 
+                        class="flex-1 py-8"
+                        :class="experience.reverseDesign ? 'pl-4 border-l' : 'pr-4 border-r text-right'">
+                            <h2 class="my-1 text-2xl font-semibold">{{ experience.jobTitle }}</h2>
+                            <p>{{ experience.description }}</p>
+                        </div>
                     </div>
-                    <div 
-                    class="flex-1 py-8"
-                    :class="experience.reverseDesign ? 'pl-4 border-l' : 'pr-4 border-r text-right'">
-                        <h2 class="my-1 text-2xl font-semibold">{{ experience.jobTitle }}</h2>
-                        <p>{{ experience.description }}</p>
-                    </div>
-                </div>
-            </template>
-            <Accordion>
-                <template v-for="(experience, index) in experiences" :key="index">                    
-                    <AccordionItem :active-class="{ active: index === 0}">
-                        <template #header>
-                            {{ experience.jobTitle }}
-                        </template>
-                        <template #content>
-                            <span class="block">{{ experience.companyName }}</span>
-                            <span class="block mb-2">{{ experience.year }}</span>
-                            <p>
-                                {{ experience.description }}
-                            </p>
-                        </template>
-                    </AccordionItem>
                 </template>
-            </Accordion>
+            </template>
+            <template v-else>
+                <Accordion>
+                    <template v-for="(experience, index) in experiences" :key="index">                    
+                        <AccordionItem :active-class="{ active: index === 0}">
+                            <template #header>
+                                {{ experience.jobTitle }}
+                            </template>
+                            <template #content>
+                                <span class="block">{{ experience.companyName }}</span>
+                                <span class="block mb-2">{{ experience.year }}</span>
+                                <p>
+                                    {{ experience.description }}
+                                </p>
+                            </template>
+                        </AccordionItem>
+                    </template>
+                </Accordion>
+            </template>
         </div>
     </div>
 </template>
