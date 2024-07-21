@@ -16,6 +16,7 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
                 'times-new-roman': ['"Times New Roman"', 'Sans-serif'],
+                'roboto': ['"Roboto"', 'Sans-serif'],
                 'playfair-display': ['"Playfair Display"'],
                 'barlow-semi-condensed': ['"Barlow Semi Condensed"'],
             },

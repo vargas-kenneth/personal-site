@@ -1,7 +1,7 @@
 <template>
-    <footer class="text-white bg-darker-purple h-72">
-        <div class="w-4/5 flex flex-1 h-4/5 flex-wrap mx-auto">
-            <div class="w-1/3">
+    <footer class="text-white bg-darker-purple h-64 md:h-72">
+        <div class="md:w-4/5 h-4/5 pt-5 md:pt-0 mx-auto flex flex-col justify-center items-center md:flex-row ">
+            <div class="w-1/3 mb-4 md:mb-0 order-2 md:order-none">
                 <ul class="h-full flex justify-center items-center gap-5">
                     <li><img class="w-5"
                             src="storage/images/icons/social-facebook.png" 
@@ -14,16 +14,17 @@
                         alt="linkedin"></li>
                 </ul>
             </div>
-            <div class="w-1/3 flex justify-center items-center">
+            <!--   -->
+            <div class="w-1/3 mb-4 md:mb-0 flex justify-center items-center order-1 md:order-none"> 
                 <img class="w-16" src="storage/images/logo/logo.png" alt="Logo">
             </div>
-            <div class="w-1/3 flex justify-center items-end flex-col ">
+            <div class="w-1/3 flex justify-center items-center md:items-end flex-col order-last md:order-none">
                 <a href="">vargaskenneth26@gmail.com</a>
-                <span>+63 945-454-579</span>
+                <span class="text-nowrap">+63 945-454-579</span>
             </div>
         </div>
         <div class="h-1/5 flex items-center justify-center">
-            <span class="block">Copyright &copy; 2024 Personal Portfolio</span>
+            <span class="block text-center">Copyright &copy; 2024 Personal Portfolio</span>
         </div>
     </footer>
 </template>

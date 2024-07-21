@@ -41,7 +41,7 @@ const isMobile = computed(() => {
 </script>
 
 <template>
-    <div class="flex justify-center bg-charcoal-gray ">
+    <div id="experience" class="flex justify-center bg-charcoal-gray ">
         <div class="w-4/5 items-center py-20">
             <div class="title mb-10 text-center">
                 <h1 class="text-white text-3xl font-bold">Experiences</h1>
@@ -99,7 +99,7 @@ const isMobile = computed(() => {
     </div>
 </template>
 
-<style>
+<style scoped>
 .experiences {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
