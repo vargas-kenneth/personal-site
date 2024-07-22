@@ -53,7 +53,7 @@ const scrollToSection = (sectionId) => {
 
 const showMenus = (e) => {
     showMenu.value = !showMenu.value;
-    body.value.style.cssText = 'height: 100%; overflow: hidden;';
+    body.value.style.cssText = showMenu.value ? 'height: 100%; overflow: hidden;' : '';    
 };
 
 const updateScreenWidth = () => {
