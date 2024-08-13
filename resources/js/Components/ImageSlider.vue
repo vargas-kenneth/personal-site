@@ -36,7 +36,7 @@ const breakpoints = {
                 <swiper-slide
                     v-for="image of images"
                     :key="image.id">
-                    <img :src="'storage/skills/'+image.filename" alt="">
+                    <img :src="'storage/images/skills/'+image.filename" alt="">
                 </swiper-slide>
         </swiper>
     </div>
