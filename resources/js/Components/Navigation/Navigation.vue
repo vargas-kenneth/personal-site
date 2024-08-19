@@ -1,10 +1,6 @@
 <script setup>
-import { 
-    onMounted, 
-    onBeforeUnmount, 
-    ref, 
-    computed 
-} from 'vue';
+import { ref } from 'vue';
+import { useIsMobile } from '@/Composables/useIsMobile.js';
 
 const menuItems = [
     { id: 1, title: 'Home', url: '#home' },
@@ -12,14 +8,11 @@ const menuItems = [
     { id: 3, title: 'Skills', url: '#skills' },
     { id: 4, title: 'Experience', url: '#experience' },
 ];
-const screenWidth = ref(window.innerWidth);
+
 const showMenu = ref(false);
 const timeoutId = ref(null);
 const body = ref(null);
-
-const isMobile = computed(() => {
-    return screenWidth.value <= 720;
-});
+const isMobile = useIsMobile();
 
 const scrollToSection = (sectionId) => {
     if (showMenu) {
@@ -55,20 +48,6 @@ const showMenus = (e) => {
     showMenu.value = !showMenu.value;
     body.value.style.cssText = showMenu.value ? 'height: 100%; overflow: hidden;' : '';    
 };
-
-const updateScreenWidth = () => {
-    screenWidth.value = window.innerWidth;
-};
-
-onMounted(() => {
-    window.addEventListener('resize', updateScreenWidth);
-    body.value = document.querySelector('body');
-});
-
-onBeforeUnmount(() => {
-    window.removeEventListener('resize', updateScreenWidth);
-    clearTimeout(timeoutId.value);
-});
 </script>
 
 <template>
