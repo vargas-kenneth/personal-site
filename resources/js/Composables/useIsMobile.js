@@ -5,9 +5,8 @@ import {
     onUnmounted,
  } from 'vue';
 
-export function useIsMobile() {
+export function useIsMobile(mobileTabletSize = 1080) {
     const screenWidth = ref(window.innerWidth);
-    const mobileTabletSize = 1080;
 
     const isMobile = computed(() =>
          screenWidth.value <= mobileTabletSize
