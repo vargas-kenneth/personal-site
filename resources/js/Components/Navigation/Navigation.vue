@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import { useIsMobile } from '@/Composables/useIsMobile.js';
 
 const menuItems = [
@@ -48,6 +48,10 @@ const showMenus = (e) => {
     showMenu.value = !showMenu.value;
     body.value.style.cssText = showMenu.value ? 'height: 100%; overflow: hidden;' : '';    
 };
+
+onMounted(() => {
+    body.value = document.querySelector('body');
+});
 </script>
 
 <template>
