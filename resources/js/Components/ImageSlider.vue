@@ -1,7 +1,9 @@
 <script setup>
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
+import { config } from '@/Config/AppConfig.js';
 
+const imagePath = config.path.images;
 const props = defineProps(['images']);
 
 const breakpoints = {
@@ -36,7 +38,7 @@ const breakpoints = {
                 <swiper-slide
                     v-for="image of images"
                     :key="image.id">
-                    <img :src="'storage/images/skills/'+image.filename" alt="">
+                    <img :src="`${imagePath}/skills/${image.filename}`" alt="">
                 </swiper-slide>
         </swiper>
     </div>
