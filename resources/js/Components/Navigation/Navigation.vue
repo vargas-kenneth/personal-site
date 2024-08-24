@@ -1,25 +1,20 @@
 <script setup>
-import { 
-    onMounted, 
-    onBeforeUnmount, 
-    ref, 
-    computed 
-} from 'vue';
+import { ref, onMounted } from 'vue';
+import { useIsMobile } from '@/Composables/useIsMobile.js';
+import { config } from '@/Config/AppConfig.js';
 
+const imagePath = config.path.images;
 const menuItems = [
     { id: 1, title: 'Home', url: '#home' },
     { id: 2, title: 'Intro', url: '#intro' },
     { id: 3, title: 'Skills', url: '#skills' },
     { id: 4, title: 'Experience', url: '#experience' },
 ];
-const screenWidth = ref(window.innerWidth);
+
 const showMenu = ref(false);
 const timeoutId = ref(null);
 const body = ref(null);
-
-const isMobile = computed(() => {
-    return screenWidth.value <= 720;
-});
+const isMobile = useIsMobile();
 
 const scrollToSection = (sectionId) => {
     if (showMenu) {
@@ -56,18 +51,8 @@ const showMenus = (e) => {
     body.value.style.cssText = showMenu.value ? 'height: 100%; overflow: hidden;' : '';    
 };
 
-const updateScreenWidth = () => {
-    screenWidth.value = window.innerWidth;
-};
-
 onMounted(() => {
-    window.addEventListener('resize', updateScreenWidth);
     body.value = document.querySelector('body');
-});
-
-onBeforeUnmount(() => {
-    window.removeEventListener('resize', updateScreenWidth);
-    clearTimeout(timeoutId.value);
 });
 </script>
 
@@ -76,21 +61,21 @@ onBeforeUnmount(() => {
     <div v-if="isMobile">
         <div class="flex justify-between items-center py-4 px-6">
             <img class="w-12" 
-                src="storage/images/logo/logo.png" 
+                :src="`${imagePath}logo/logo.png`"
                 alt="Logo">
             <button @click="showMenus">
                 <img class="w-7" 
-                    src="storage/images/icons/mobile-menu.png"
+                    :src="`${imagePath}icons/mobile-menu.png`"
                     v-if="!showMenu">
                 <img class="w-5 mr-1" 
-                    src="storage/images/icons/close.png"
+                    :src="`${imagePath}icons/close.png`"
                     v-else>             
             </button>
         </div>
     </div>
     <div v-else
         class="flex justify-between py-4">
-        <img class="w-16 pl-4 sm:pl-0" src="storage/images/logo/logo.png" alt="Logo">
+        <img class="w-16 pl-4 sm:pl-0" :src="`${imagePath}logo/logo.png`" alt="Logo">
         <div class="hidden sm:flex justify-center">
             <ul class="flex gap-3 items-center text-base">
                 <li v-for="item in menuItems" :key="item.id" class="hover:text-violet-300">
@@ -110,17 +95,17 @@ onBeforeUnmount(() => {
             <div class="menuItems flex gap-x-2 mb-4">
                 <a href="https://www.facebook.com/026Kenneth/">
                     <img class="w-5"
-                        src="storage/images/icons/social-facebook.png" 
+                        :src="`${imagePath}icons/social-facebook.png`" 
                         alt="facebook">
                 </a>
                 <a href="https://www.facebook.com/026Kenneth/">
                     <img class="w-5"
-                        src="storage/images/icons/social-github.png" 
+                        :src="`${imagePath}icons/social-github.png`" 
                         alt="github">
                 </a>
                 <a href="https://www.facebook.com/026Kenneth/">
                     <img class="w-5"
-                        src="storage/images/icons/social-linkedin.png" 
+                        :src="`${imagePath}icons/social-linkedin.png`" 
                         alt="linkedin">
                 </a>
             </div>

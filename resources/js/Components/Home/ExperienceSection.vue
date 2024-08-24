@@ -1,6 +1,7 @@
 <script setup>
 import { ref, computed } from "vue";
 import { Accordion, AccordionItem } from '@/Components/Accordion';
+import { useIsMobile } from '@/Composables/useIsMobile.js';
 
 const experiences = ref([
     {
@@ -33,11 +34,7 @@ const alternateDesign = computed(() => {
     })
 });
 
-const screenWidth = ref(window.innerWidth);
-
-const isMobile = computed(() => {
-    return screenWidth.value <= 1080;
-});
+const isMobile = useIsMobile();
 </script>
 
 <template>

@@ -1,18 +1,14 @@
 <script setup>
-import { ref, computed } from 'vue';
 import GridBox from '@/Components/GridBox.vue';
+import { useIsMobile } from '@/Composables/useIsMobile.js';
 
 const title = 'A Brief Introduction';
 const subTitle = 'Trusted Developer & Collaborator';
 const content = 'To be a web developer that provides an opportunity to enhance my skill and ability. And to apply my knowledge and creativity that will contribute in organization. A self-motivated web developer with ability to learn more in rapid changing environments and compositions.';
 
 const parentClass = 'w-1/4';
-
-const screenWidth = ref(window.innerWidth);
-
-const isMobile = computed(() => {
-    return screenWidth.value <= 1080;
-});
+const hideAtScreenWidth = 1279;
+const isMobile = useIsMobile(hideAtScreenWidth);
 </script>
 
 <template>
