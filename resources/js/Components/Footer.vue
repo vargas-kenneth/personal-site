@@ -8,15 +8,27 @@ const imagePath = config.path.images;
         <div class="md:w-4/5 h-4/5 pt-5 md:pt-0 mx-auto flex flex-col justify-center items-center md:flex-row ">
             <div class="w-1/3 mb-4 md:mb-0 order-2 md:order-none">
                 <ul class="h-full flex justify-center items-center gap-5">
-                    <li><img class="w-5"
-                            :src="`${imagePath}icons/social-facebook.png`" 
-                            alt="facebook"></li>
-                    <li><img class="w-5"
-                        :src="`${imagePath}icons/social-github.png`" 
-                        alt="github"></li>
-                    <li><img class="w-5"
-                        :src="`${imagePath}icons/social-linkedin.png`" 
-                        alt="linkedin"></li>
+                    <li>
+                        <a href="https://www.facebook.com/026Kenneth/">
+                            <img class="w-5"
+                                :src="`${imagePath}icons/social-facebook.png`" 
+                                alt="facebook">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/vargas-kenneth/">
+                            <img class="w-5"
+                                :src="`${imagePath}icons/social-github.png`" 
+                                alt="github">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/kenneth-vargas-355960190/">
+                            <img class="w-5"
+                                :src="`${imagePath}icons/social-linkedin.png`" 
+                                alt="linkedin">
+                        </a>
+                    </li>
                 </ul>
             </div>
             <!--   -->
@@ -24,7 +36,7 @@ const imagePath = config.path.images;
                 <img class="w-16" :src="`${imagePath}logo/logo.png`" alt="Logo">
             </div>
             <div class="w-1/3 flex justify-center items-center md:items-end flex-col order-last md:order-none">
-                <a href="">vargaskenneth26@gmail.com</a>
+                <a href="mailto:vargaskenneth26@gmail.com">vargaskenneth26@gmail.com</a>
                 <span class="text-nowrap">+63 945-454-579</span>
             </div>
         </div>

@@ -98,12 +98,12 @@ onMounted(() => {
                         :src="`${imagePath}icons/social-facebook.png`" 
                         alt="facebook">
                 </a>
-                <a href="https://www.facebook.com/026Kenneth/">
+                <a href="https://github.com/vargas-kenneth/">
                     <img class="w-5"
                         :src="`${imagePath}icons/social-github.png`" 
                         alt="github">
                 </a>
-                <a href="https://www.facebook.com/026Kenneth/">
+                <a href="https://www.linkedin.com/in/kenneth-vargas-355960190/">
                     <img class="w-5"
                         :src="`${imagePath}icons/social-linkedin.png`" 
                         alt="linkedin">
