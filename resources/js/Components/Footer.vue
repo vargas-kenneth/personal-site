@@ -36,7 +36,7 @@ const imagePath = config.path.images;
                 <img class="w-16" :src="`${imagePath}logo/logo.png`" alt="Logo">
             </div>
             <div class="w-1/3 flex justify-center items-center md:items-end flex-col order-last md:order-none">
-                <a href="">vargaskenneth26@gmail.com</a>
+                <a href="mailto:vargaskenneth26@gmail.com">vargaskenneth26@gmail.com</a>
                 <span class="text-nowrap">+63 945-454-579</span>
             </div>
         </div>
