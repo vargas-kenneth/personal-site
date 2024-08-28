@@ -11,6 +11,8 @@ const images = [
     {id: 7, 'filename': 'mysql-original.png'},
     {id: 8, 'filename': 'php-plain.png'},
     {id: 9, 'filename': 'wordpress-plain.png'},
+    {id: 10, 'filename': 'vue-js.png'},
+    {id: 11, 'filename': 'tailwind-css.png'},
 ];
 
 </script>
