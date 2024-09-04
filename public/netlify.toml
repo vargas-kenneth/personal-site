@@ -1,0 +1,8 @@
+[build]
+  publish = "public"
+  command = "composer install && npm install && npm run prod"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.php?path=$1"
+  status = 200
