@@ -12,9 +12,10 @@ const appName = import.meta.env.VITE_APP_NAME || 'Personal Site';
 createInertiaApp({
     title: (title) => `${title}`,
     resolve: name => {
-        const pages = import.meta.glob('./Pages/**/*.vue', { eager: true });
-        let page = pages[`./Pages/${name}.vue`];
-        page.default.layout = page.default.layout || AppLayout;
+        const page = resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob('./Pages/**/*.vue'));
+        page.then((module) => {
+            module.default.layout = module.default.layout || AppLayout;
+        });
         return page;
       },
     setup({ el, App, props, plugin }) {
